@@ -28,7 +28,7 @@ b8 platform_startup(
     i32 width,
     i32 height){
 
-    plat_state->internal_state = platform_allocate(sizeof(internal_state), TRUE);
+    plat_state->internal_state = platform_allocate(sizeof(internal_state), FALSE);
     internal_state* state = (internal_state*)plat_state->internal_state;
 
     state->h_instance = GetModuleHandleA(0);
