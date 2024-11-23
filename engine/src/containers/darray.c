@@ -10,7 +10,7 @@ void* _darray_create(u64 length, u64 stride) {
     pe_set_memory(new_array, 0, header_size + array_size);
     new_array[DARRAY_CAPACITY] = length;
     new_array[DARRAY_FIELD_LENGTH] = 0;
-    new_array[DARRAY_STRIDE] = 0;
+    new_array[DARRAY_STRIDE] = stride;
 
     return (void*)(new_array + DARRAY_FIELD_LENGTH);
 }
@@ -82,10 +82,11 @@ void* _darray_pop_at(void* array, u64 index, void* dst) {
 
     // If not on the last element, snip out the entry and copy the rest inward
     if (index != length - 1) {
+        // TODO: replace copying from close addresses
         pe_copy_memory(
             (void*)(addr + (index * stride)),
             (void*)(addr + ((index + 1) * stride)),
-            stride * (length - index));
+            stride * (length - (index + 1)));
     }
 
     _darray_field_set(array, DARRAY_LENGTH, length - 1);

@@ -3,6 +3,8 @@
 #include "core/pe_memory.h"
 #include "containers/darray.h"
 
+#include "core/logger.h"
+
 typedef struct registered_event {
     void* listener;
     PFN_on_event callback;
