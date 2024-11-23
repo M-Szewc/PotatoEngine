@@ -4,6 +4,8 @@
 #include "logger.h"
 
 #include "platform/platform.h"
+#include "core/pe_memory.h"
+#include <stdlib.h>
 
 typedef struct application_state {
     game* game_inst;
@@ -65,6 +67,11 @@ b8 application_create(game* game_inst) {
 }
 
 b8 application_run() {
+    // TODO: remove that
+    char* memory_info = get_memory_usage_str();
+    PE_INFO(memory_info);
+    free(memory_info);
+
     while(app_state.is_running){
         if (!platform_pump_messages(&app_state.platform)) {
             app_state.is_running = FALSE;
