@@ -1,6 +1,7 @@
 #pragma once
 
 #include "defines.h"
+#include "core/asserts.h"
 
 typedef enum renderer_backend_type {
     RENDERER_BACKEND_TYPE_VULKAN,
