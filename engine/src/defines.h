@@ -12,6 +12,11 @@ typedef signed short i16;
 typedef signed int i32;
 typedef signed long long i64;
 
+// used instead of UINT32_MAX, UINT64_MAX, because VScode intellisense
+// mistakes windows macros for errors
+#define U32MAX (unsigned int)0xffffffff
+#define U64MAX (unsigned long long)0xffffffffffffffff
+
 // Floating point types
 typedef float f32;
 typedef double f64;

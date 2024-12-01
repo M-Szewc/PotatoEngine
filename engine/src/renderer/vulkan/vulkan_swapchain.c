@@ -136,7 +136,7 @@ void swapchain_create(vulkan_context* context, u32 width, u32 height, vulkan_swa
     );
 
     // Swapchain extent
-    if (context->device.swapchain_support.capabilities.currentExtent.width != UINT32_MAX ) {
+    if (context->device.swapchain_support.capabilities.currentExtent.width != U32MAX ) {
         swapchain_extent = context->device.swapchain_support.capabilities.currentExtent;
     }
 

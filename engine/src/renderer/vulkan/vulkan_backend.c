@@ -345,7 +345,7 @@ b8 vulkan_renderer_backend_begin_frame(renderer_backend* backend, f32 delta_time
     if (!vulkan_fence_wait(
         &context,
         &context.in_flight_fences[context.current_frame],
-        UINT64_MAX
+        U64MAX
     )) {
         PE_WARN("In-flight fence wait failure!");
         return FALSE;
@@ -356,7 +356,7 @@ b8 vulkan_renderer_backend_begin_frame(renderer_backend* backend, f32 delta_time
     if (!vulkan_swapchain_acquire_next_image_index(
         &context,
         &context.swapchain,
-        UINT64_MAX,
+        U64MAX,
         context.image_available_semaphores[context.current_frame],
         0,
         &context.image_index
@@ -413,7 +413,7 @@ b8 vulkan_renderer_backend_end_frame(renderer_backend* backend, f32 delta_time){
         vulkan_fence_wait(
             &context,
             context.images_in_flight[context.image_index],
-            UINT64_MAX
+            U64MAX
         );
     }
 
