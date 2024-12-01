@@ -1,4 +1,4 @@
-#include "core/kstring.h"
+#include "core/pe_string.h"
 #include "core/pe_memory.h"
 
 // TODO: stop using string and create own
