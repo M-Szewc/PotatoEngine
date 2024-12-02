@@ -58,9 +58,10 @@
         "windowsx.h": "c",
         "vulkan_platform.h": "c",
         "renderer_frontend.h": "c",
-        "system_error": "cpp",
+        "system_error": "c",
         "vulkan_fence.h": "c",
         "vulkan_frame_buffer.h": "c",
-        "vulkan_types.inl": "c"
+        "vulkan_types.inl": "c",
+        "expected": "cpp"
     }
 }
