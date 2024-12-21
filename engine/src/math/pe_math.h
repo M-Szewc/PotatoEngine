@@ -74,7 +74,7 @@ PE_INLINE vec2 vec2_create(f32 x, f32 y) {
 }
 
 /**
- * @breif Creates and returns a 2-component vector with all components set to 0.0f.
+ * @brief Creates and returns a 2-component vector with all components set to 0.0f.
  */
 PE_INLINE vec2 vec2_zero() {
     return (vec2){0.0f, 0.0f};
@@ -1147,12 +1147,12 @@ PE_INLINE vec3 mat4_down(mat4 matrix) {
  * @return A 3-component directional vector.
  */
 PE_INLINE vec3 mat4_left(mat4 matrix) {
-    vec3 right;
-    right.x = -matrix.data[0];
-    right.y = -matrix.data[4];
-    right.z = -matrix.data[8];
-    vec3_normalize(&right);
-    return right;
+    vec3 left;
+    left.x = -matrix.data[0];
+    left.y = -matrix.data[4];
+    left.z = -matrix.data[8];
+    vec3_normalize(&left);
+    return left;
 }
 
 /**
@@ -1162,12 +1162,12 @@ PE_INLINE vec3 mat4_left(mat4 matrix) {
  * @return A 3-component directional vector.
  */
 PE_INLINE vec3 mat4_right(mat4 matrix) {
-    vec3 left;
-    left.x = matrix.data[0];
-    left.y = matrix.data[4];
-    left.z = matrix.data[8];
-    vec3_normalize(&left);
-    return left;
+    vec3 right;
+    right.x = matrix.data[0];
+    right.y = matrix.data[4];
+    right.z = matrix.data[8];
+    vec3_normalize(&right);
+    return right;
 }
 
 // ------------------------------------

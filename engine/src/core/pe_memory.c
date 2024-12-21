@@ -40,18 +40,20 @@ typedef struct memory_system_state {
 
 static memory_system_state* state_ptr;
 
-void initialize_memory(u64* memory_requirement, void* state) {
+b8 memory_system_initialize(u64* memory_requirement, void* state) {
     *memory_requirement = sizeof(memory_system_state);
     if (state == 0) {
-        return;
+        return false;
     }
 
     state_ptr = state;
     state_ptr->alloc_count = 0;
     platform_zero_memory(&state_ptr->stats, sizeof(state_ptr->stats));
+
+    return true;
 }
 
-void shutdown_memory(void* state) {
+void memory_system_shutdown(void* state) {
     state_ptr = 0;
 }
 

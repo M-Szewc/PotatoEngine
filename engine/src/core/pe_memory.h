@@ -26,8 +26,16 @@ typedef enum memory_tag {
     MEMORY_TAG_MAX_TAGS
 } memory_tag;
 
-PE_API void initialize_memory();
-PE_API void shutdown_memory();
+/**
+ * @brief Initializes memory system. Call twice; once with state = 0 to get required memory size,
+ * then a second time passing allocated memory to state.
+ * 
+ * @param memory_requirement A pointer to hold the required memory size state
+ * @param state 0 if just requesting memory requirement, otherwise allocated block of memory
+ * @returns True on success; otherwise false.
+ */
+PE_API b8 memory_system_initialize(u64* memory_requirement, void* state);
+PE_API void memory_system_shutdown(void* state);
 
 
 PE_API void* pe_allocate(u64 size, memory_tag tag);

@@ -62,6 +62,10 @@
         "vulkan_fence.h": "c",
         "vulkan_frame_buffer.h": "c",
         "vulkan_types.inl": "c",
-        "expected": "cpp"
+        "expected": "cpp",
+        "stat.h": "c",
+        "xiosbase": "cpp",
+        "ios": "cpp",
+        "vulkan_shader_utils.h": "c"
     }
 }
